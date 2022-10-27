@@ -89,7 +89,11 @@ basicNG + geom_point() + geom_lm()
 We have a Positive line fit for SIMS and GRIP.
 
 ### Numerical results 
+```{r}
+cor(SIMS~GRIP,data=data)
+```
 
+The number that we got for the linear correlation is 0.63 that means we still have a positive linear correlation.
 
 ### Inferential  (Build model.2)
   
