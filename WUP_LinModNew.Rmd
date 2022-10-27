@@ -123,8 +123,11 @@ basicNG + geom_point() + geom_lm()
 ## Model 3 SIM~ARM+GRIP
 
 ### Numerical results (cor)
+```{r}
+cor(SIMS~ARM+GRIP,data=data)
+```
 
-`
+The correlation number is 0.73 so we have a positive linear correlation.
   
 ### Inferential  (Build 2-dimentional model.3)
 
