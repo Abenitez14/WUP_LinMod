@@ -96,12 +96,28 @@ cor(SIMS~GRIP,data=data)
 The number that we got for the linear correlation is 0.63 that means we still have a positive linear correlation.
 
 ### Inferential  (Build model.2)
-  
+```{r}
+model.2 <- lm(SIMS~GRIP,data=data)
+summary.lm(model.2)
+```  
+
+
 
 #### predict model.2 at target point
+```{r}
+mydat <- data.frame(GRIP = 94, ARM = 88)
+```
+```{r}
+predict(model.2,mydat,interval = "prediction")
+```
+
+The prediction that we got was the fit is -0.536, the lower is -3.107, the upper is 2.035.
 
 #### now add the model fit to our plot for model.2
-  
+```{r}
+basicNG <- ggplot(data,aes(y=GRIP,x=SIMS))
+basicNG + geom_point() + geom_lm()
+```  
 
 
 ## Model 3 SIM~ARM+GRIP
