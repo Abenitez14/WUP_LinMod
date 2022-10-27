@@ -55,12 +55,28 @@ The correlation of SIMS and ARM is 0.68 so that number also tells us that we hav
 
 
 ### Inferential  (Build model.1)
-
+```{r}
+model.1 <- lm(SIMS~ARM,data=data)
+summary.lm(model.1)
+```
 #### Predict at target point
+```{r}
+mydat <- data.frame(GRIP = 94, ARM = 88)
+```
 
+
+
+```{r}
+predict(model.1,mydat,interval = "prediction")
+```
+
+The target prediction is 0.70 the lower is -1.72 the upper is 3.13.
 
 #### scatterplot with model fit
-  
+```{r}
+basicNN <- ggplot(data,aes(y=ARM,x=SIMS))
+basicNN + geom_point() + geom_lm()
+``` 
 
 ## Model 2 SIM~GRIP
 
