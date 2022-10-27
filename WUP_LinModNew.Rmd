@@ -81,7 +81,12 @@ basicNN + geom_point() + geom_lm()
 ## Model 2 SIM~GRIP
 
 ### Now add in scatterplot
+```{r}
+basicNG <- ggplot(data,aes(y=GRIP,x=SIMS))
+basicNG + geom_point() + geom_lm()
+```
 
+We have a Positive line fit for SIMS and GRIP.
 
 ### Numerical results 
 
